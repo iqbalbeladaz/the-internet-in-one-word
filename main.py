@@ -28,6 +28,8 @@ def entry_text() -> str:
         raise ValueError("entry must be one clean, non-empty word")
     if len(ENTRY.split()) != 1:
         raise ValueError("entry must be a single word")
+    if not ENTRY.isalpha():
+        raise ValueError("entry must be letters only: no digits or punctuation")
     return ENTRY
 
 
